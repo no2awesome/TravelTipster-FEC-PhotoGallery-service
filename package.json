@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack --watch",
-    "db": "mysql -u root -p < db/schema.sql"
+    "seed": "mysql -u root -p < db/schema.sql && node db/seed.js"
   },
   "dependencies": {
     "express": "^4.16.4",
