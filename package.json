@@ -1,17 +1,33 @@
 {
-  "name": "",
+  "name": "TravelTipster-Photo-Gallery",
   "version": "",
   "description": "",
-  "author": "",
+  "author": "Paloma Velazquez",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "build": "webpack --watch",
+    "seed": "mysql -u root -p < db/schema.sql && node db/seed.js"
   },
   "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.23.0",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2"
   }
 }
