@@ -1,0 +1,106 @@
+/* Minimal CSS Reset adapted from alligator.io */
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: 'Arial', 'Tahoma', sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Styles for Hotel Header */
+
+#masthead {
+	background-color: #00a680;
+	min-height: 60px;
+  align-items: flex-start;
+	display: flex;
+	justify-content: space-between;
+}
+
+#logo {
+	width: 230px;
+	margin: 7px 20px;
+}
+
+#user-nav {
+	display: flex;
+	align-self: stretch;
+}
+
+#user-nav-links {
+	display: flex;
+	align-self: stretch;
+	font-size: 12px;
+}
+
+#user-nav-links div {
+	min-width: 70px;
+	text-align: center;
+	align-self: center;
+	min-height: 60%;
+  border-right: 1px solid #4cbaa0;
+}
+
+#user-nav-links div:last-child {
+	border-right: none;
+}
+
+	#user-nav-links div a {
+		color: white;
+	}
+
+		#user-nav-links div a img {
+	    width: 18px;
+	    display: block;
+	    margin: 4px auto;
+		}
+
+#search {
+  align-self: center;
+  margin: 0px 20px;
+}
+
+	#search input {
+		padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+	}
+
+#global-nav {
+  min-height: 48px;
+  justify-content: flex-start;
+  display: flex;
+  border-bottom: 1px solid #cccccc;
+  padding-left: 12px;
+}
+
+	#global-nav a {
+		padding: 14px;
+	}
+
+	#global-nav a:hover {
+		color: #00a680;
+	}
