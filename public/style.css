@@ -132,7 +132,7 @@ a {
 		display: none;
 	}
 
-		#global-nav a:hover + .tray, .tray:hover {
+		#global-nav a:hover + .tray, #global-nav .top-nav-item .tray:hover {
 			display: block;
 		}
 
@@ -144,6 +144,10 @@ a {
 		.tray ul li a:hover {
 			color: #000000;
 		}
+
+.top-nav-item > a {
+	max-height: 20px;
+}
 
 /* Styles for Hotel Basics */
 
@@ -225,7 +229,9 @@ a {
 }
 
 #hero {
-
+  height: 330px;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
 #thumbnails {
@@ -237,4 +243,27 @@ a {
 #thumbnails div {
 	width: calc(98% / 5 * 1);
 	display: inline-block;
+	max-height: 65px;
+  margin-bottom: 5px;
+  overflow: hidden;
 }
+
+/* 101 */
+#thumbnails img { 
+	opacity: 0.8;
+}
+
+#thumbnails img:hover {
+	opacity: 0.9;
+}
+
+/* 111 */
+#thumbnails img.selected-thumbnail {
+	opacity: 1;
+}
+
+
+/* Tag (img): 1 */
+/* Class (.selected-thumbnail): 10 */
+/* ID (#thumbnails): 100 */ 
+/* !important: 1000 */

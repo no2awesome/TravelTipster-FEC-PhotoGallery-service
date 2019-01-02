@@ -10,14 +10,22 @@ class PhotoGallery extends React.Component {
 	}
 
 	switchHero(e) {
-		console.log(e);
-		var newHero = e.target.getAttribute("src");
+		var clickedThumbnail = e.target;
+		var newHero = clickedThumbnail.getAttribute("src");
 		this.setState({hero: newHero});
-		console.log("old", this.state);
+		var selectedThumbnails = document.getElementsByClassName('selected-thumbnail');
+		Array.prototype.forEach.call(selectedThumbnails, function(thumbnail) {
+			thumbnail.classList.remove('selected-thumbnail');
+		});
+		clickedThumbnail.classList.add('selected-thumbnail');
+	}
+
+	componentDidMount() {
+		// GET request
 	}
 
 	render() {
-		console.log("new", this.state);
+
 		return (
 			<div>
 				<div id="hero">
@@ -37,6 +45,7 @@ class PhotoGallery extends React.Component {
 				</div>
 			</div>
 			)
+
 	}
 }
 
