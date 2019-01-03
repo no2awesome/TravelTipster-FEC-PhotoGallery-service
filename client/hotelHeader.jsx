@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from './starRating.jsx';
 import axios from 'axios';
 
 class Header extends React.Component {
@@ -120,7 +121,10 @@ class Header extends React.Component {
 				<div id="hotel-basics">
 					<h1>{name}</h1>
 					<div id="rating-container">
-						<span id="rating"><img src="./img/star-filled.svg" />{average_rating} average rating</span>
+						<span id="rating">
+							<StarRating rating={this.props.average_rating} />
+							{average_rating} average rating
+						</span>
 						<span>#{ranking} of Hotels in {city}</span>
 					</div>
 					<div id="contact-container">

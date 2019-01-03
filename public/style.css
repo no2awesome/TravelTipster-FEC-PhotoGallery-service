@@ -207,6 +207,15 @@ a {
 			background-image: url("./img/website.svg");
 		}
 
+#rating #stars {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+	#rating #stars img {
+		width: 15px;
+	}
+
 /* Styles for Main */
 
 #main {
@@ -262,8 +271,51 @@ a {
 	opacity: 1;
 }
 
+/* CSS Specificity
+Tag (img): 1
+Class (.selected-thumbnail): 10
+ID (#thumbnails): 100
+!important: 1000
+*/
 
-/* Tag (img): 1 */
-/* Class (.selected-thumbnail): 10 */
-/* ID (#thumbnails): 100 */ 
-/* !important: 1000 */
+
+/* Media Queries for Tablet */
+@media only screen and (max-width : 768px) {
+	#booking {
+	  width: 100%;
+	}
+
+	#photo-gallery {
+		width: 100%;
+	}
+
+	#hero {
+  	height: 200px;
+	}
+
+	/* #masthead & #global-nav should collapse into bar with hamburger button. */
+
+}
+
+
+/* Media Queries for Phone */
+@media only screen and (max-width: 480px) {
+
+	#main {
+		flex-flow: column;
+	}
+
+	#booking {
+		width: 100%;
+	  margin-bottom: 1rem;
+	}
+
+	#photo-gallery {
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	#hero {
+	}
+
+}

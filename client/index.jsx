@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './hotelHeader.jsx';
+import starRating from './starRating.jsx';
 import PhotoGallery from './photoGallery.jsx';
 
 
