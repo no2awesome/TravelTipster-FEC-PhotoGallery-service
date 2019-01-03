@@ -1,11 +1,8 @@
 var data = require('./seed_data.js');
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'cupcake',
-  database : 'hotels'
-});
+var mysql = require('mysql');
+const mysqlConfig = require('./config.js');
+
+var connection = mysql.createConnection(mysqlConfig);
  
 connection.connect();
 
@@ -34,4 +31,7 @@ data.data.images.forEach(image => {
  
 connection.end();
 
-module.exports = connection;
+
+module.exports = {
+	connection
+};

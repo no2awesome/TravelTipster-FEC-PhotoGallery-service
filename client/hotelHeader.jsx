@@ -1,17 +1,44 @@
 import React from 'react';
+import axios from 'axios';
 
 class Header extends React.Component {
 	constructor() {
 		super();
+		this.state = {
+			currentHotel: 42
+		}
+	}
+
+	componentDidMount() {
+		const self = this;
+		// GET request
+		axios.get(`/hotel/${this.state.currentHotel}`)
+	  .then(function (response) {
+	    // handle success
+	    console.log(response.data);
+	    const hotel = response.data[0];
+
+	    self.setState({
+				address: hotel.address,
+				average_rating: hotel.average_rating,
+				city: hotel.city,
+				id: hotel.id,
+				name: hotel.name,
+				phone: hotel.phone,
+				ranking: hotel.ranking,
+				state: hotel.state,
+				website: hotel.website
+	    })
+	  })
+	  .catch(function (error) {
+	    // handle error
+	    console.log(error);
+	  });
+
 	}
 
 	render() {
-
-		var city = "San Francisco";
-		var hotel = "Omni Hotel";
-		var avgrat = "4.5";
-		var ranking = "3";
-		var total = "100";
+		const {address, average_rating, city, id, name, phone, ranking, state, website} = this.state;
 
 		return (
 			<div>
@@ -57,7 +84,7 @@ class Header extends React.Component {
 									<li><a href="#">All {city} Hotels</a></li>
 									<li><a href="#">{city} Hotel Deals</a></li>
 									<li><a href="#">Last Minute Hotel Deals in {city}</a></li>
-									<li><a href="#">Hotels near {hotel}</a></li>
+									<li><a href="#">Hotels near {name}</a></li>
 								</ul>
 							</div>
 						</li>
@@ -66,7 +93,7 @@ class Header extends React.Component {
 							<div className="tray">
 								<ul>
 									<li><a href="#">All things to do in {city}</a></li>
-									<li><a href="#">Things to do near {hotel}</a></li>
+									<li><a href="#">Things to do near {name}</a></li>
 								</ul>
 							</div>
 						</li>
@@ -75,7 +102,7 @@ class Header extends React.Component {
 							<div className="tray">
 								<ul>
 									<li><a href="#">All {city} Restaurants</a></li>
-									<li><a href="#">Restaurants near {hotel}</a></li>
+									<li><a href="#">Restaurants near {name}</a></li>
 								</ul>
 							</div>
 						</li>
@@ -91,14 +118,14 @@ class Header extends React.Component {
 					</ul>
 				</nav>
 				<div id="hotel-basics">
-					<h1>{hotel}</h1>
+					<h1>{name}</h1>
 					<div id="rating-container">
-						<span id="rating">{avgrat} average rating</span>
-						<span>#{ranking} of {total} Hotels in {city}</span>
+						<span id="rating">{average_rating} average rating</span>
+						<span>#{ranking} of Hotels in {city}</span>
 					</div>
 					<div id="contact-container">
-						<span id="address">91702 Heathcote Branch, {city} CA</span>
-						<span id="phone">818-726-5064</span>
+						<span id="address">{address}, {city} {state}</span>
+						<span id="phone">{phone}</span>
 						<span id="website"><a href="#">Visit Hotel Website</a></span>
  					</div>
 				</div>

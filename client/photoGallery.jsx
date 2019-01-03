@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class PhotoGallery extends React.Component {
 	constructor() {
@@ -22,6 +23,7 @@ class PhotoGallery extends React.Component {
 
 	componentDidMount() {
 		// GET request
+
 	}
 
 	render() {
