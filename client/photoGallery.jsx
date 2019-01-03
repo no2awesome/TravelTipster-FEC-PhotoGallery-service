@@ -6,7 +6,8 @@ class PhotoGallery extends React.Component {
 		super();
 		this.switchHero = this.switchHero.bind(this);
 		this.state = {
-			hero: './img/room/001.jpg'
+			hero: './img/room/001.jpg',
+			photos: []
 		};
 	}
 
@@ -19,11 +20,26 @@ class PhotoGallery extends React.Component {
 			thumbnail.classList.remove('selected-thumbnail');
 		});
 		clickedThumbnail.classList.add('selected-thumbnail');
+		console.log(this.state)
 	}
 
 	componentDidMount() {
+		const self = this;
 		// GET request
+		axios.get(`/hotel/${this.state.currentHotel}/photos`)
+	  .then(function (response) {
+	    // handle success
+	    console.log(response.data);
+	    // const image = response.data[0];
 
+	    self.setState({
+				photos: response.data
+	    })
+	  })
+	  .catch(function (error) {
+	    // handle error
+	    console.log(error);
+	  });
 	}
 
 	render() {

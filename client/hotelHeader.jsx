@@ -5,7 +5,7 @@ class Header extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			currentHotel: 42
+			currentHotel: 18
 		}
 	}
 
@@ -15,7 +15,7 @@ class Header extends React.Component {
 		axios.get(`/hotel/${this.state.currentHotel}`)
 	  .then(function (response) {
 	    // handle success
-	    console.log(response.data);
+	    // console.log(response.data);
 	    const hotel = response.data[0];
 
 	    self.setState({
@@ -120,7 +120,7 @@ class Header extends React.Component {
 				<div id="hotel-basics">
 					<h1>{name}</h1>
 					<div id="rating-container">
-						<span id="rating">{average_rating} average rating</span>
+						<span id="rating"><img src="./img/star-filled.svg" />{average_rating} average rating</span>
 						<span>#{ranking} of Hotels in {city}</span>
 					</div>
 					<div id="contact-container">

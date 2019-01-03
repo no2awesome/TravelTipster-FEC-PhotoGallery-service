@@ -1,13 +1,12 @@
 const mysql = require('mysql');
 const mysqlConfig = require('./config.js');
 
-const connection = mysql.createConnection(mysqlConfig);
+// const connection = mysql.createConnection(mysqlConfig);
 
 
 const getHotelInfo = function(hotel_id, callback) {
-	connection.connect();
 
-  connection.query(`SELECT * FROM hotel WHERE id = ${hotel_id}`, function(err, results) {
+  mysqlConfig.query(`SELECT * FROM hotel WHERE id = ${hotel_id}`, function(err, results) {
   	if (err) {
   		throw err;
   	}
@@ -15,21 +14,23 @@ const getHotelInfo = function(hotel_id, callback) {
   	callback(results);
   })
 
-  connection.end();
+  // connection.end();
 }
 
-const getPhotos = function(callback) {
-	connection.connect();
+const getPhotos = function(hotel_id, callback) {
 
-  connection.query("SELECT * FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = 42", function(err, results) {
+
+  console.log('getPhotos fires')
+
+  mysqlConfig.query("SELECT * FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = 42", function(err, results) {
   	if (err) {
   		throw err;
   	}
-
+    console.log('results: ', results)
   	callback(results);
   })
 
-  connection.end();
+  // connection.end();
 }
 
 module.exports = {

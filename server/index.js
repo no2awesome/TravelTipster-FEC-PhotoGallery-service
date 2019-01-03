@@ -2,8 +2,11 @@ const express = require('express')
 const app = express()
 const port = 3003
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const db = require('../db');
+
+app.use(bodyParser.urlencoded())
 
 app.use(express.static(path.join(__dirname, './../public')))
 
@@ -20,7 +23,16 @@ app.get('/hotel/:hotel_id', function(req, res) {
 
 // GET photos from a certain hotel
 app.get('/hotel/:hotel_id/photos', function(req, res) {
-	res.send('Hello World!')
+	console.log('app.get fires')
+
+	db.getPhotos(
+		req.params.hotel_id,
+		function(results) {
+			res.send(results);
+		}
+	)
+
+	// res.send('Hello World!')
 })
 
 
