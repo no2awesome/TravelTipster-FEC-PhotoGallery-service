@@ -122,7 +122,7 @@ class Header extends React.Component {
 					<h1>{name}</h1>
 					<div id="rating-container">
 						<span id="rating">
-							<StarRating rating={this.props.average_rating} />
+							<StarRating rating={this.state.average_rating} />
 							{average_rating} average rating
 						</span>
 						<span>#{ranking} of Hotels in {city}</span>

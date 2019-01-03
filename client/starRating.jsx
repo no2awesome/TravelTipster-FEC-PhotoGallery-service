@@ -8,9 +8,9 @@ class StarRating extends React.Component {
 
 	render() {
 
-		const numStars = 3.1
+		const numStars = Math.floor(this.props.rating);
 
-		var decimal = parseFloat(Number.parseFloat(numStars-Math.floor(numStars)).toFixed(1));
+		var decimal = parseFloat(Number.parseFloat(this.props.rating-Math.floor(this.props.rating)).toFixed(1));
 
 		return (
 			<div id="stars">
