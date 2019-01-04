@@ -83,8 +83,8 @@ class PhotoGallery extends React.Component {
 
 			<div className="modal">
 	      <div className="modal-content">
-          <span className="close-btn" onClick={this.hideModal}>&times;</span>
           <img src={this.state.hero} />
+          <span className="close-btn" onClick={this.hideModal}>&times;</span>
       	</div>
    	 </div>
 
