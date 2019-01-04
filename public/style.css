@@ -279,8 +279,8 @@ ID (#thumbnails): 100
 */
 
 
-/* Media Queries for Tablet */
-@media only screen and (max-width : 768px) {
+/* Media Queries: Medium Devices; */
+@media only screen and (max-width : 800px) {
 	#booking {
 	  width: 100%;
 	}
@@ -293,13 +293,28 @@ ID (#thumbnails): 100
   	height: 200px;
 	}
 
+	#address {
+		display: block;
+    margin-bottom: 10px;
+	}
+
+	#user-nav-links div span {
+		display: none;
+	}
+
+	#user-nav-links div a img {
+    width: 20px;
+    display: block;
+    margin: 8px auto;
+	}
+
 	/* #masthead & #global-nav should collapse into bar with hamburger button. */
 
 }
 
 
-/* Media Queries for Phone */
-@media only screen and (max-width: 480px) {
+/* Media Queries: Small Devices */
+@media only screen and (max-width: 600px) {
 
 	#main {
 		flex-flow: column;
@@ -315,7 +330,12 @@ ID (#thumbnails): 100
 		margin-left: 0px;
 	}
 
-	#hero {
+	#address, #ranking {
+		display: none;
+	}
+
+	#rating-container #rating {
+		border: none;
 	}
 
 }

@@ -6,8 +6,10 @@ class PhotoGallery extends React.Component {
 		super();
 		this.switchHero = this.switchHero.bind(this);
 		this.state = {
+			photos: [],
 			hero: './img/room/001.jpg',
-			photos: []
+			isLoading: true,
+			firstThumbnails: []
 		};
 	}
 
@@ -20,22 +22,32 @@ class PhotoGallery extends React.Component {
 			thumbnail.classList.remove('selected-thumbnail');
 		});
 		clickedThumbnail.classList.add('selected-thumbnail');
-		console.log(this.state)
+		// console.log(this.state)
 	}
 
 	componentDidMount() {
 		const self = this;
+
 		// GET request
 		axios.get(`/hotel/${this.state.currentHotel}/photos`)
 	  .then(function (response) {
 	    // handle success
-	    console.log(response.data);
-	    // const image = response.data[0];
+	    // console.log(response.data[0]);
 
 	    self.setState({
-				photos: response.data
+				photos: response.data,
+				isLoading: false
 	    })
 	  })
+
+	  .then(function(response) {
+	  	var thumbnails = [];
+	  	for (var i = 0; i < 10; i++) {
+	  		thumbnails.push(self.state.photos[i].url)
+	  	}
+	  	self.setState({firstThumbnails: thumbnails})
+	  })
+
 	  .catch(function (error) {
 	    // handle error
 	    console.log(error);
@@ -50,16 +62,11 @@ class PhotoGallery extends React.Component {
 					<img src={this.state.hero} />
 				</div>
 				<div id="thumbnails">
-					<div><img onClick={this.switchHero} src="./img/room/003.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
-					<div><img onClick={this.switchHero} src="./img/room/001.jpg" /></div>
+				{
+					!this.state.isLoading
+					? this.state.firstThumbnails.map(thumbnail => <div><img onClick={this.switchHero} src={thumbnail} /></div>)
+					: console.log('still loading')
+				}
 				</div>
 			</div>
 			)

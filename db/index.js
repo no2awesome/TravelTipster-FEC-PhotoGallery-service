@@ -19,10 +19,7 @@ const getHotelInfo = function(hotel_id, callback) {
 
 const getPhotos = function(hotel_id, callback) {
 
-
-  console.log('getPhotos fires')
-
-  mysqlConfig.query("SELECT * FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = 42", function(err, results) {
+  mysqlConfig.query(`SELECT * FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = 18`, function(err, results) {
   	if (err) {
   		throw err;
   	}

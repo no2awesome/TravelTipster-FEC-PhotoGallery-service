@@ -47,9 +47,9 @@ class Header extends React.Component {
 					<img src="img/Logo.png" id="logo" alt="TravelTipster" />
 					<div id="user-nav">
 						<div id="user-nav-links">
-							<div><a href="#"><img src="./img/portfolio.svg" />Trips</a></div>
-							<div><a href="#"><img src="./img/chat.svg" />Inbox</a></div>
-							<div><a href="#"><img src="./img/profile.svg" />Profile</a></div>
+							<div><a href="#"><img src="./img/portfolio.svg" /><span>Trips</span></a></div>
+							<div><a href="#"><img src="./img/chat.svg" /><span>Inbox</span></a></div>
+							<div><a href="#"><img src="./img/profile.svg" /><span>Profile</span></a></div>
 						</div>
 						<form id="search">
 							<input type="text" placeholder="Search" />
@@ -125,7 +125,7 @@ class Header extends React.Component {
 							<StarRating rating={this.state.average_rating} />
 							{average_rating} average rating
 						</span>
-						<span>#{ranking} of Hotels in {city}</span>
+						<span id="ranking">#{ranking} of Hotels in {city}</span>
 					</div>
 					<div id="contact-container">
 						<span id="address">{address}, {city} {state}</span>
