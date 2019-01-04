@@ -149,7 +149,7 @@ a {
 	max-height: 20px;
 }
 
-/* Styles for Hotel Basics */
+/* Styles for Hotel Basics ---------------------------*/
 
 #hotel-basics {
 	background-color: #ffffff;
@@ -216,7 +216,7 @@ a {
 		width: 15px;
 	}
 
-/* Styles for Main */
+/* Styles for Main ---------------------------*/
 
 #main {
 	display: flex;
@@ -279,7 +279,46 @@ ID (#thumbnails): 100
 */
 
 
-/* Media Queries: Medium Devices; */
+/* Hero Image Modal ---------------------------*/
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 10px 10px 20px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 90%;
+}
+
+	.modal-content img {
+		margin: 0 auto;
+	}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.close-btn {
+	float: right;
+}
+
+	.close-btn:hover {
+		cursor: pointer;
+	}
+
+
+/* Media Queries: Medium Devices ---------------------------*/
 @media only screen and (max-width : 800px) {
 	#booking {
 	  width: 100%;
@@ -313,7 +352,7 @@ ID (#thumbnails): 100
 }
 
 
-/* Media Queries: Small Devices */
+/* Media Queries: Small Devices ---------------------------*/
 @media only screen and (max-width: 600px) {
 
 	#main {

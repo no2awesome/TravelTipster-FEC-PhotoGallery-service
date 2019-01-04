@@ -5,6 +5,8 @@ class PhotoGallery extends React.Component {
 	constructor() {
 		super();
 		this.switchHero = this.switchHero.bind(this);
+		this.showModal = this.showModal.bind(this);
+		this.hideModal = this.hideModal.bind(this);
 		this.state = {
 			photos: [],
 			hero: './img/room/001.jpg',
@@ -54,11 +56,21 @@ class PhotoGallery extends React.Component {
 	  });
 	}
 
+	showModal() {
+		// click #hero --> add class .show-modal to .modal div
+		document.querySelector('.modal').classList.add('show-modal')
+	}
+
+	hideModal() {
+		// click .close-btn --> remove class .show-modal to .modal div
+		document.querySelector('.modal').classList.remove('show-modal')
+	}
+
 	render() {
 
 		return (
 			<div>
-				<div id="hero">
+				<div id="hero" onClick={this.showModal}>
 					<img src={this.state.hero} />
 				</div>
 				<div id="thumbnails">
@@ -68,6 +80,14 @@ class PhotoGallery extends React.Component {
 					: console.log('still loading')
 				}
 				</div>
+
+			<div className="modal">
+	      <div className="modal-content">
+          <span className="close-btn" onClick={this.hideModal}>&times;</span>
+          <img src={this.state.hero} />
+      	</div>
+   	 </div>
+
 			</div>
 			)
 
