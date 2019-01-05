@@ -2,10 +2,23 @@ var faker = require('faker');
 
 var categories = ['View', 'Amenities', 'Dining', 'Room', 'Other'];
 
+function randomImage(min, max) {
+  var min = Math.ceil(min);
+  var max = Math.floor(max);
+  var output = Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  if (output < 10) {
+  	return "00" + output;
+  } else if (output < 100) {
+  	return "0" + output;
+  } else {
+  	return "" + output;
+  }
+}
+
 var Image = function(hotel_id) {
 	this.hotel_id = hotel_id;
 	this.title = faker.lorem.words();
-	this.url = faker.image.imageUrl();
+	this.url = "https://s3.us-east-2.amazonaws.com/travel-tipster-photos/" + randomImage(1, 100) + ".jpg";
 	this.date = faker.date.past().toString().slice(4, 15);
 	this.author = faker.fake("{{name.firstName}} {{name.lastName}}");
 	this.category = categories[Math.floor(Math.random() * 5)];

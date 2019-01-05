@@ -1,12 +1,8 @@
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
+const config = {
   host     : 'localhost',
   user     : 'root',
   password : 'cupcake',
   database : 'hotels'
-});
+};
 
-connection.connect();
-
-module.exports = connection;
+module.exports = config;
