@@ -5,27 +5,13 @@
   overflow: hidden;
   margin-bottom: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 	#hero img:hover {
 		filter: brightness(90%);
 	}
 
-/*	#hero:hover::after {
-    content: "expand";
-    position: absolute;
-		margin-left: auto;
-		margin-right: auto;
-		top: 40%;
-		left: 0;
-		right: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
-    opacity: .7;
-	}
-*/
 #thumbnails {
 	display: flex;
   flex-wrap: wrap;

@@ -72,7 +72,7 @@ class PhotoGallery extends React.Component {
 				<div id={style['thumbnails']}>
 				{
 					!this.state.isLoading
-					&& this.state.photos.slice(0, 10).map(thumbnail => <div className={style['thumbnail']}><img onClick={this.switchHero} src={thumbnail.url} /></div>)
+					&& this.state.photos.slice(0, 10).map(thumbnail => <div className={style['thumbnail']} key={thumbnail.url}><img onClick={this.switchHero} src={thumbnail.url} /></div>)
 				}
 				</div>
 
