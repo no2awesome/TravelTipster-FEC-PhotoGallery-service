@@ -11,7 +11,7 @@ class PhotoGallery extends React.Component {
 		this.onModalContentClick = this.onModalContentClick.bind(this);
 		this.state = {
 			photos: [],
-			hero: './img/room/001.jpg',
+			hero: '',
 			isLoading: true
 		};
 	}
@@ -34,6 +34,7 @@ class PhotoGallery extends React.Component {
 		axios.get(`/hotel/${this.state.currentHotel}/photos`)
 	  .then(function (response) {
 	    self.setState({
+	    	hero: response.data[0].url,
 				photos: response.data,
 				isLoading: false
 	    })
@@ -71,8 +72,7 @@ class PhotoGallery extends React.Component {
 				<div id={style['thumbnails']}>
 				{
 					!this.state.isLoading
-					? this.state.photos.slice(0, 10).map(thumbnail => <div className={style['thumbnail']}><img onClick={this.switchHero} src={thumbnail.url} /></div>)
-					: console.log('still loading')
+					&& this.state.photos.slice(0, 10).map(thumbnail => <div className={style['thumbnail']}><img onClick={this.switchHero} src={thumbnail.url} /></div>)
 				}
 				</div>
 

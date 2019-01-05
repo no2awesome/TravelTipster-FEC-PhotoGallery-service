@@ -130,7 +130,7 @@ class Header extends React.Component {
 					<div id="contact-container">
 						<span id="address">{address}, {city} {state}</span>
 						<span id="phone">{phone}</span>
-						<span id="website"><a href="#">Visit Hotel Website</a></span>
+						<span id="website"><a href={website}>Visit Hotel Website</a></span>
  					</div>
 				</div>
 			</div>
