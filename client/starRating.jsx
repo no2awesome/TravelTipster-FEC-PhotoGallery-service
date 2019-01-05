@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './hotelHeader.jsx';
+import Header from './hotelHeader/hotelHeader.jsx';
 
 class StarRating extends React.Component {
 	constructor(props) {
