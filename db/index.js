@@ -15,7 +15,7 @@ const getHotelInfo = function(hotel_id, callback) {
 }
 
 const getPhotos = function(hotel_id, callback) {
-  connection.query(`SELECT * FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = ${hotel_id}`, function(err, results) {
+  connection.query(`SELECT hotel_id, title, author, url, date, category FROM hotel LEFT JOIN image ON image.hotel_id = hotel.id WHERE hotel.id = ${hotel_id}`, function(err, results) {
   	if (err) {
   		throw err;
   	}

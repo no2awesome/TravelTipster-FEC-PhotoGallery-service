@@ -25,8 +25,7 @@ app.get('/hotel/:hotel_id', function(req, res) {
 app.get('/hotel/:hotel_id/photos', function(req, res) {
 	console.log('app.get fires')
 
-	// var hotel_id = req.params.hotel_id;
-	var hotel_id = 1;
+	var hotel_id = req.params.hotel_id;
 
 	db.getPhotos(
 		hotel_id,

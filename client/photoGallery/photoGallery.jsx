@@ -30,8 +30,9 @@ class PhotoGallery extends React.Component {
 	componentDidMount() {
 		const self = this;
 
+		console.log(this.props.hotel)
 		// GET request
-		axios.get(`/hotel/${this.state.currentHotel}/photos`)
+		axios.get(`/hotel/${this.props.hotel}/photos`)
 	  .then(function (response) {
 	    self.setState({
 	    	hero: response.data[0].url,
@@ -39,8 +40,8 @@ class PhotoGallery extends React.Component {
 				isLoading: false
 	    })
 
-	  	// console.log("the first ten")
-	  	// console.log(response.data.slice(0, 10))
+	  	console.log("the first ten")
+	  	console.log(response.data.slice(0, 10))
 
 	  })
 	  .catch(function (error) {

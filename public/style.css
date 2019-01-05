@@ -36,7 +36,7 @@ a {
 
 /* Styles for Container Divs ---------------------------*/
 
-#main {
+.listing-content {
 	display: flex;
   flex-direction: row;
   margin: 1rem;
@@ -45,6 +45,10 @@ a {
 #booking {
 	background-color: aliceblue;
   width: calc(100% / 3 * 1);
+}
+
+.gallery {
+  width: calc(100% / 3 * 2);
 }
 
 #photo-gallery {
@@ -244,7 +248,7 @@ a {
 	  width: 100%;
 	}
 
-	#photo-gallery {
+	.gallery {
 		width: 100%;
 	}
 
@@ -276,7 +280,7 @@ a {
 /* Media Queries: Small Devices ---------------------------*/
 @media only screen and (max-width: 600px) {
 
-	#main {
+	.listing-content {
 		flex-flow: column;
 	}
 

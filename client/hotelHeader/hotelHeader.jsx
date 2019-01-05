@@ -6,14 +6,15 @@ class Header extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			currentHotel: 18
 		}
 	}
 
 	componentDidMount() {
 		const self = this;
 		// GET request
-		axios.get(`/hotel/${this.state.currentHotel}`)
+
+		console.log(this.props.hotel)
+		axios.get(`/hotel/${this.props.hotel}`)
 	  .then(function (response) {
 	    // handle success
 	    // console.log(response.data);
