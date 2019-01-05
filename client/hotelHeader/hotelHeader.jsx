@@ -1,6 +1,14 @@
 import React from 'react';
-import StarRating from './../starRating/starRating.jsx';
 import axios from 'axios';
+import StarRating from './../starRating/starRating.jsx';
+import style from './hotelHeader.css';
+// require('svg-url-loader!./../../public/img/portfolio.svg');
+// require('svg-url-loader!./../../public/img/chat.svg');
+// require('svg-url-loader!./../../public/img/profile.svg');
+
+import portfolio from './../../public/img/portfolio.png';
+import chat from './../../public/img/chat.png';
+import profile from './../../public/img/profile.png';
 
 class Header extends React.Component {
 	constructor() {
@@ -44,24 +52,24 @@ class Header extends React.Component {
 
 		return (
 			<div>
-				<div id="masthead">
-					<img src="img/Logo.png" id="logo" alt="TravelTipster" />
-					<div id="user-nav">
-						<div id="user-nav-links">
-							<div><a href="#"><img src="./img/portfolio.svg" /><span>Trips</span></a></div>
-							<div><a href="#"><img src="./img/chat.svg" /><span>Inbox</span></a></div>
-							<div><a href="#"><img src="./img/profile.svg" /><span>Profile</span></a></div>
+				<div id={style['masthead']}>
+					<img src="img/Logo.png" id={style['logo']} alt="TravelTipster" />
+					<div id={style['user-nav']}>
+						<div id={style['user-nav-links']}>
+							<div><a href="#"><img src="./img/portfolio.png" /><span>Trips</span></a></div>
+							<div><a href="#"><img src="./img/chat.png" /><span>Inbox</span></a></div>
+							<div><a href="#"><img src="./img/profile.png" /><span>Profile</span></a></div>
 						</div>
-						<form id="search">
+						<form id={style['search']}>
 							<input type="text" placeholder="Search" />
 						</form>
 					</div>
 				</div>
-				<nav id="global-nav">
+				<nav id={style['global-nav']}>
 					<ul>
 						<li>
 							<a href="#">Travel Feed: {city}</a>
-							<div className="tray">
+							<div className={style['tray']}>
 								<ul>
 									<li><a href="#">{city} Tourism</a></li>
 									<li><a href="#">{city} Hotels</a></li>
@@ -81,7 +89,7 @@ class Header extends React.Component {
 						</li>
 						<li id="global-nav-selected">
 							<a href="#">Hotels</a>
-							<div className="tray">
+							<div className={style['tray']}>
 								<ul>
 									<li><a href="#">All {city} Hotels</a></li>
 									<li><a href="#">{city} Hotel Deals</a></li>
@@ -92,7 +100,7 @@ class Header extends React.Component {
 						</li>
 						<li>
 							<a href="#">Things to Do</a>
-							<div className="tray">
+							<div className={style['tray']}>
 								<ul>
 									<li><a href="#">All things to do in {city}</a></li>
 									<li><a href="#">Things to do near {name}</a></li>
@@ -101,7 +109,7 @@ class Header extends React.Component {
 						</li>
 						<li>
 							<a href="#">Restaurants</a>
-							<div className="tray">
+							<div className={style['tray']}>
 								<ul>
 									<li><a href="#">All {city} Restaurants</a></li>
 									<li><a href="#">Restaurants near {name}</a></li>
@@ -119,19 +127,19 @@ class Header extends React.Component {
 						</li>
 					</ul>
 				</nav>
-				<div id="hotel-basics">
+				<div id={style['hotel-basics']}>
 					<h1>{name}</h1>
-					<div id="rating-container">
-						<span id="rating">
+					<div id={style['rating-container']}>
+						<span id={style['rating']}>
 							<StarRating rating={this.state.average_rating} />
 							{average_rating} average rating
 						</span>
-						<span id="ranking">#{ranking} of Hotels in {city}</span>
+						<span id={style['ranking']}>#{ranking} of Hotels in {city}</span>
 					</div>
-					<div id="contact-container">
-						<span id="address">{address}, {city} {state}</span>
-						<span id="phone">{phone}</span>
-						<span id="website"><a href={website}>Visit Hotel Website</a></span>
+					<div id={style['contact-container']}>
+						<span id={style['address']}>{address}, {city} {state}</span>
+						<span id={style['phone']}>{phone}</span>
+						<span id={style['website']}><a href={website}>Visit Hotel Website</a></span>
  					</div>
 				</div>
 			</div>
