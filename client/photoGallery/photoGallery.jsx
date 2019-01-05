@@ -12,8 +12,7 @@ class PhotoGallery extends React.Component {
 		this.state = {
 			photos: [],
 			hero: './img/room/001.jpg',
-			isLoading: true,
-			firstThumbnails: []
+			isLoading: true
 		};
 	}
 
@@ -26,7 +25,6 @@ class PhotoGallery extends React.Component {
 			thumbnail.classList.remove('selected-thumbnail');
 		});
 		clickedThumbnail.classList.add('selected-thumbnail');
-		// console.log(this.state)
 	}
 
 	componentDidMount() {
@@ -35,23 +33,15 @@ class PhotoGallery extends React.Component {
 		// GET request
 		axios.get(`/hotel/${this.state.currentHotel}/photos`)
 	  .then(function (response) {
-	    // handle success
-	    // console.log(response.data[0]);
-
 	    self.setState({
 				photos: response.data,
 				isLoading: false
 	    })
-	  })
 
-	  .then(function(response) {
-	  	var thumbnails = [];
-	  	for (var i = 0; i < 10; i++) {
-	  		thumbnails.push(self.state.photos[i].url)
-	  	}
-	  	self.setState({firstThumbnails: thumbnails})
-	  })
+	  	// console.log("the first ten")
+	  	// console.log(response.data.slice(0, 10))
 
+	  })
 	  .catch(function (error) {
 	    // handle error
 	    console.log(error);
@@ -81,7 +71,7 @@ class PhotoGallery extends React.Component {
 				<div id={style['thumbnails']}>
 				{
 					!this.state.isLoading
-					? this.state.firstThumbnails.map(thumbnail => <div className={style['thumbnail']}><img onClick={this.switchHero} src={thumbnail} /></div>)
+					? this.state.photos.slice(0, 10).map(thumbnail => <div className={style['thumbnail']}><img onClick={this.switchHero} src={thumbnail.url} /></div>)
 					: console.log('still loading')
 				}
 				</div>
