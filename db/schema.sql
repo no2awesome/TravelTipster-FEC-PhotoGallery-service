@@ -4,19 +4,8 @@ CREATE DATABASE hotels;
 
 USE hotels;
 
-CREATE TABLE Image (
-  `id` INT AUTO_INCREMENT,
-  `hotel_id` INT NOT NULL,
-  `title` TEXT,
-  `url` TEXT,
-  `author` TEXT,
-  `date` TEXT,
-  `category` TEXT,
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE Hotel (
-  `id` INT AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` TEXT,
   `address` TEXT,
   `city` TEXT,
@@ -27,4 +16,18 @@ CREATE TABLE Hotel (
   `website` TEXT,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE Image (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `hotel_id` INT NOT NULL,
+  `title` TEXT,
+  `url` TEXT,
+  `author` TEXT,
+  `date` TEXT,
+  `category` TEXT,
+  PRIMARY KEY (id)
+);
+
+ALTER TABLE Image
+  ADD FOREIGN KEY (hotel_id) REFERENCES Hotel (id);
 
