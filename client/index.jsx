@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './hotelHeader/hotelHeader.jsx';
-import starRating from './starRating.jsx';
+import starRating from './starRating/starRating.jsx';
 import PhotoGallery from './photoGallery/photoGallery.jsx';
 
 class Listing extends React.Component {

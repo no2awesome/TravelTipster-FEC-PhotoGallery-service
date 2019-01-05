@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from './hotelHeader/hotelHeader.jsx';
+import Header from './../hotelHeader/hotelHeader.jsx';
+import style from './starRating.css';
 
 class StarRating extends React.Component {
 	constructor(props) {
@@ -37,7 +38,7 @@ class StarRating extends React.Component {
 
 
 		return (
-			<div id="stars">
+			<div id={style.stars}>
 				{stars}
 			</div>
 		)

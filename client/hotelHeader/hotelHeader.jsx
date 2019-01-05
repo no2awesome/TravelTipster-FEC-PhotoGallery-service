@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './../starRating.jsx';
+import StarRating from './../starRating/starRating.jsx';
 import axios from 'axios';
 
 class Header extends React.Component {
