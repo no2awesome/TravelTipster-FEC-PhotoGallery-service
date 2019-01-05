@@ -1,0 +1,48 @@
+/* Minimal CSS Reset adapted from alligator.io */
+
+:global(html) {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+:global(*), :global(*:before), :global(*:after) {
+  box-sizing: inherit;
+}
+
+:global(body) {
+	background-color: #f2f2f2;
+}
+
+:global(body), :global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6), :global(p), :global(ol), :global(ul) {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: 'Arial', 'Tahoma', sans-serif;
+}
+
+:global(ol), :global(ul) {
+  list-style: none;
+}
+
+:global(img) {
+  max-width: 100%;
+  height: auto;
+}
+
+:global(a) {
+	text-decoration: none;
+	color: black;
+}
+
+/* Styles for Container Divs ---------------------------*/
+
+.listing-content {
+	display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+#booking {
+	background-color: aliceblue;
+  width: calc(100% / 3 * 1);
+}

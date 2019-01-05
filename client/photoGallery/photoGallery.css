@@ -1,5 +1,9 @@
 /* Styles for Photo Gallery ---------------------------*/
 
+.gallery {
+  width: calc(100% / 3 * 2);
+}
+
 #hero {
   max-height: 330px;
   overflow: hidden;

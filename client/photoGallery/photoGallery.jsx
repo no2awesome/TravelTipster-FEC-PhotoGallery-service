@@ -66,7 +66,7 @@ class PhotoGallery extends React.Component {
 	render() {
 
 		return (
-			<div className="gallery">
+			<div className={style['gallery']}>
 				<div id={style['hero']} onClick={this.showModal}>
 					<img src={this.state.hero} />
 				</div>

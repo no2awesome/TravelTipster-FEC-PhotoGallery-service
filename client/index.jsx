@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './hotelHeader/hotelHeader.jsx';
 import starRating from './starRating/starRating.jsx';
 import PhotoGallery from './photoGallery/photoGallery.jsx';
+import style from './index.css';
 
 class Listing extends React.Component {
   constructor() {
@@ -33,8 +34,8 @@ class Listing extends React.Component {
     return (
       <div>
         <Header hotel={currentHotel} />
-        <div className="listing-content">
-          <div id="booking">Booking component goes here</div>
+        <div className={style['listing-content']}>
+          <div id={style['booking']}>Booking component goes here</div>
           <PhotoGallery hotel={currentHotel} />
         </div>
       </div>
