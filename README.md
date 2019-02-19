@@ -17,4 +17,9 @@ npm install
 
 # Generate fake data:
 npm run seed
+
+# Start app:
+npm run build
+npm run start
+
  ```
